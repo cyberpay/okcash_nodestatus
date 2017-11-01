@@ -104,6 +104,17 @@
       <p>Please report this to <a href="mailto:<?php echo $config['admin_email']; ?>"><?php echo $config['admin_email']; ?></a></p>
     </div>
 <?php } else { ?>
+
+ <?php
+ //On exécute la commande de récupérage (si si) de température
+ $temp = exec('cat /sys/class/thermal/thermal_zone0/temp');
+ //On divise par 1000 pour convertir
+ $tempconv  =  $temp / 1000;
+ //Un chiffre après la virgule ça suffit
+ $temppi = round($tempconv,1);
+?>
+    
+    
 <?php if (isset($config['display_version']) && $config['display_version']) { ?>
       <p class="stat"><span class="label">Node Version:</span> <?php echo preg_replace(array('/\//','/:/'),array('',' '),$data['net_info']['subversion']); ?></p>
 <?php } ?>
@@ -140,9 +151,13 @@
       <p class="stat"><span class="label">Node Location:</span> <img src="img/blank.gif" class="flag flag-<?php echo strtolower($data['ip_location']['country_code']); ?>" alt="<?php echo $data['ip_location']['country_name']; ?>" /> <?php echo $data['ip_location']['country_name']; ?></p>
 <?php } ?>
 
+<?php if (isset($data['Raspi_temp'])) { ?>
+      <p class="stat"><span class="label">Temperature:</span> <?php echo $temppi; ?></p>
+<?php } ?>
+    
 <?php if (isset($data['free_disk_space'])) { ?>
       <p class="stat"><span class="label">Free Disk Space:</span> <?php echo $data['free_disk_space']; ?></p>
-<?php } ?>
+<?php } ?>    
 
 <?php if (isset($data['cache_time']) & $config['use_cache'] === TRUE) { ?>
       <p class="stat"><span class="label">Last Updated:</span> <?php echo date($config['date_format'], $data['cache_time']); ?> (refreshes every <?php echo ($config['max_cache_time']/60); ?> minutes, next at <?php echo date('H:i:s',$data['cache_expiry']) ?>)</p>
