@@ -151,7 +151,7 @@
       <p class="stat"><span class="label">Node Location:</span> <img src="img/blank.gif" class="flag flag-<?php echo strtolower($data['ip_location']['country_code']); ?>" alt="<?php echo $data['ip_location']['country_name']; ?>" /> <?php echo $data['ip_location']['country_name']; ?></p>
 <?php } ?>
 
-<?php if (isset($data['Raspi_temp'])) { ?>
+<?php if (isset($config['Raspi_temp'])) { ?>
       <p class="stat"><span class="label">Temperature:</span> <?php echo $temppi; echo " C"; ?></p>
 <?php } ?>
     
