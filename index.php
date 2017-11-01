@@ -4,9 +4,6 @@
  *
  * @category File
  * @package  BitcoinStatus
- * @author   Craig Watson <craig@cwatson.org>
- * @license  https://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
- * @link     https://github.com/craigwatson/bitcoind-status
  */
 
 if (!is_file('./php/config.php')) {
