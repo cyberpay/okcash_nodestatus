@@ -31,6 +31,9 @@ $config = array(
   // Staking
   'display_stake_info'        => true,
   'display_balance'           => false,
+  
+   // Temperature
+  'Raspi_temp'                => false,
 
   // Cache
   'cache_geo_data'            => false,
