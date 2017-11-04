@@ -116,7 +116,7 @@
     
     
 <?php if (isset($config['display_version']) && $config['display_version']) { ?>
-      <p class="stat"><span class="label">Node Version:</span> <?php echo preg_replace(array('/\//','/:/'),array('',' '),$data['net_info']['subversion']); ?></p>
+      <p class="stat"><span class="label">Node Version:</span> <?php echo $data['version']; ?></p>
 <?php } ?>
       <p class="stat"><span class="label">Number of Connections:</span> <?php echo $data['connections']; ?></p>
 <?php if ($data['display_connection_chart'] === true) { ?>
