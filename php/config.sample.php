@@ -37,10 +37,10 @@ $config = array(
 
   // Cache
   'cache_geo_data'            => false,
-  'geo_cache_file'            => '/var/tmp/bitcoind-geolocation.cache',
+  'geo_cache_file'            => '/var/tmp/okcashdd-geolocation.cache',
   'geo_cache_time'            => 604800,
   'use_cache'                 => true,
-  'cache_file'                => '/tmp/bitcoind-status.cache',
+  'cache_file'                => '/tmp/okcashd-status.cache',
   'max_cache_time'            => 300,
   'nocache_whitelist'         => array('127.0.0.1'),
 
@@ -64,20 +64,20 @@ $config = array(
 
   // Stats
   'stats_whitelist'           => array('127.0.0.1'),
-  'stats_file'                => '/tmp/bitcoind-status.data',
+  'stats_file'                => '/tmp/okcashd-status.data',
   'stats_max_age'             => '604800',
   'stats_min_data_points'     => 5,
 
   // Node Count
   'peercount_whitelist'       => array('127.0.0.1'),
-  'peercount_file'            => '/tmp/bitcoind-peers.data',
+  'peercount_file'            => '/tmp/okcashd-peers.data',
   'peercount_max_age'         => '2592000',
   'peercount_min_data_points' => 10,
   'peercount_extra_nodes'     => array(),
 
   // Uptime
   'display_bitcoind_uptime'   => false,
-  'bitcoind_process_name'     => 'bitcoind',
+  'bitcoind_process_name'     => 'okcashd',
 
   // System
   'date_format'               => 'H:i:s T, j F Y ',
