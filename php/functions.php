@@ -69,7 +69,8 @@ function getData($from_cache = false)
 
     // Get free disk space
     if ($config['display_free_disk_space'] === true) {
-        $data['free_disk_space'] = getFreeDiskSpace();
+        //$data['free_disk_space'] = getFreeDiskSpace();
+          $data['free_disk_space'] = getFreeDiskSpace($config['disk_space_mount_point']);
     }
 
     // Store network info in data array
@@ -393,9 +394,9 @@ function displayChart($config_var, $data_file, $min_data_points)
  *
  * @return String
  */
-function getFreeDiskSpace()
+function getFreeDiskSpace($mount_point)
 {
-    return convertToSI(disk_free_space(".")) . '<br />';
+    return convertToSI(disk_free_space($mount_point)) . '<br />';
 }
 
 /**
