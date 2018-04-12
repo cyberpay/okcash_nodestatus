@@ -144,20 +144,23 @@
 <?php if ($config['display_stake_info']) { ?>
       <p class="stat"><span class="label">Expected Time:</span> <?php echo ($data['stake']['expectedtime']); ?></p>
 <?php } ?>
-<?php if (isset($data['bitcoind_uptime'])) { ?>
-      <p class="stat"><span class="label">OKcash Daemon Uptime:</span> <?php echo $data['bitcoind_uptime']; ?></p>
-<?php } ?>
+
 <?php if ((isset($data['ip_location'])) && (strcmp($data['ip_location']['country_code'], 'blank') != 0)) { ?>
       <p class="stat"><span class="label">Node Location:</span> <img src="img/blank.gif" class="flag flag-<?php echo strtolower($data['ip_location']['country_code']); ?>" alt="<?php echo $data['ip_location']['country_name']; ?>" /> <?php echo $data['ip_location']['country_name']; ?></p>
 <?php } ?>
 
-<?php if ($config['Raspi_temp']) { ?>
-      <p class="stat"><span class="label">Pi Temperature:</span> <?php echo $temppi; echo " C"; ?></p>
-<?php } ?>
-    
 <?php if (isset($data['free_disk_space'])) { ?>
       <p class="stat"><span class="label">Free Disk Space:</span> <?php echo $data['free_disk_space']; ?></p>
 <?php } ?>    
+
+<?php if ($config['Raspi_temp']) { ?>
+      <p class="stat"><span class="label">Pi Temperature:</span> <?php echo $temppi; echo " C"; ?></p>
+<?php } ?>
+
+
+<?php if (isset($data['bitcoind_uptime'])) { ?>
+      <p class="stat"><span class="label">OKcash Daemon Uptime:</span> <?php echo $data['bitcoind_uptime']; ?></p>
+<?php } ?>
 
 <?php if (isset($data['cache_time']) & $config['use_cache'] === TRUE) { ?>
       <p class="stat"><span class="label">Last Updated:</span> <?php echo date($config['date_format'], $data['cache_time']); ?> (refreshes every <?php echo ($config['max_cache_time']/60); ?> minutes, next at <?php echo date('H:i:s',$data['cache_expiry']) ?>)</p>
