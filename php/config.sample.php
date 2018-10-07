@@ -30,10 +30,10 @@ $config = array(
 
   // Staking
   'display_stake_info'        => true,
-  'display_balance'           => false,
+  'display_balance'           => true,
   
    // Temperature
-  'Raspi_temp'                => false,
+  'Raspi_temp'                => true,
 
   // Cache
   'cache_geo_data'            => false,
@@ -81,7 +81,7 @@ $config = array(
 
   // System
   'date_format'               => 'H:i:s T, j F Y ',
-  'disk_space_mount_point'    => '.',
+  'disk_space_mount_point'    => '~/.okcash',
   'timezone'                  => null,
   'stylesheet'                => 'v2-light.css',
   'debug'                     => false,
