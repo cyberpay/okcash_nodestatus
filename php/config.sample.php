@@ -81,7 +81,7 @@ $config = array(
 
   // System
   'date_format'               => 'H:i:s T, j F Y ',
-  'disk_space_mount_point'    => '~/.okcash',
+  'disk_space_mount_point'    => '/home/pi/.okcash',
   'timezone'                  => null,
   'stylesheet'                => 'v2-light.css',
   'debug'                     => false,
